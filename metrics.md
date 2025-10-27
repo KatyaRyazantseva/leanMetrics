@@ -3,7 +3,6 @@
 - [Fork-Choice Metrics](#fork-choice-metrics)
 - [State Transition Metrics](#state-transition-metrics)
 - [Validator Metrics](#validator-metrics)
-- [Network Metrics](#network-metrics)
 
 
 ## Fork-Choice Metrics
@@ -33,10 +32,4 @@
 
 | Name   | Type  | Usage | Sample collection event | Labels | Qlean    | Ream     | Zeam     |
 |--------|-------|-------|-------------------------|--------|----------|----------|----------|
-|`lean_validators_count`| Gauge | Number of connected validators | On scrape | status: {status} | □ | □ | □ |
-
-## Network Metrics
-
-| Name   | Type  | Usage | Sample collection event | Labels | Qlean    | Ream     | Zeam     |
-|--------|-------|-------|-------------------------|--------|----------|----------|----------|
-|`lean_mesh_peers_by_client_count`| Gauge | Number of mesh peers by clients | On scrape | client: {client_name} | □ | □ | □ |
+|`lean_validators_count`| Gauge | Number of connected validators | On scrape |  | □ | □ | □ |
