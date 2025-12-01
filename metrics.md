@@ -1,9 +1,16 @@
 # Lean Metrics
 
+- [PQ Signature Metrics](#pq-signature-metrics)
 - [Fork-Choice Metrics](#fork-choice-metrics)
 - [State Transition Metrics](#state-transition-metrics)
 - [Validator Metrics](#validator-metrics)
 
+## PQ Signature Metrics
+
+| Name   | Type  | Usage | Sample collection event | Labels | Buckets | Qlean    | Ream     | Zeam     |
+|--------|-------|-------|-------------------------|--------|---------|----------|----------|----------|
+| `lean_pq_signature_attestation_signing_time_seconds` | Histogram | Time taken to sign an attestation | On each attestation signing | | 0.005, 0.01, 0.025, 0.05, 0.1, 1 | □ | □ | □ |
+| `lean_pq_signature_attestation_verification_time_seconds` | Histogram | Time taken to verify an attestation signature | On each `signature.verify()` on an attestation | | 0.005, 0.01, 0.025, 0.05, 0.1, 1 | □ | □ | □ |
 
 ## Fork-Choice Metrics
 
