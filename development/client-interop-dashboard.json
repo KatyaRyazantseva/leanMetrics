@@ -1238,7 +1238,8 @@
                                 "value": 80
                             }
                         ]
-                    }
+                    },
+                    "unit": "s"
                 },
                 "overrides": []
             },
@@ -1271,7 +1272,7 @@
                     },
                     "editorMode": "code",
                     "exemplar": false,
-                    "expr": "sum by (job) (increase(lean_pq_signature_attestation_signing_time_seconds_bucket{job=~\"$job\"}[$__rate_interval]))",
+                    "expr": "histogram_quantile(0.99, (rate(lean_pq_signature_attestation_signing_time_seconds_bucket{job=~\"$job\"}[$__rate_interval])))",
                     "instant": false,
                     "legendFormat": "{{job}}",
                     "range": true,
@@ -1339,7 +1340,8 @@
                                 "value": 80
                             }
                         ]
-                    }
+                    },
+                    "unit": "s"
                 },
                 "overrides": []
             },
@@ -1372,7 +1374,7 @@
                     },
                     "editorMode": "code",
                     "exemplar": false,
-                    "expr": "sum by (job) (increase(lean_pq_signature_attestation_verification_time_seconds_bucket{job=~\"$job\"}[$__rate_interval]))",
+                    "expr": "histogram_quantile(0.99, (rate(lean_pq_signature_attestation_verification_time_seconds_bucket{job=~\"$job\"}[$__rate_interval])))",
                     "instant": false,
                     "legendFormat": "{{job}}",
                     "range": true,
@@ -2465,6 +2467,6 @@
     "timezone": "browser",
     "title": "Lean Ethereum Client Interop Dashboard",
     "uid": "lean-ethereum-client-interop-dashboard",
-    "version": 2,
+    "version": 4,
     "weekStart": ""
 }
