@@ -9561,8 +9561,8 @@
         "spec": {
           "name": "network",
           "current": {
-            "text": "",
-            "value": ""
+            "text": "devnet-5",
+            "value": "devnet-5"
           },
           "label": "Network",
           "hide": "dontHide",
