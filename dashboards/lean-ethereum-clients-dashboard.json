@@ -9593,8 +9593,8 @@
         "spec": {
           "name": "job",
           "current": {
-            "text": "",
-            "value": ""
+            "text": "All",
+            "value": "$__all"
           },
           "label": "Job",
           "hide": "dontHide",
@@ -9625,8 +9625,8 @@
         "spec": {
           "name": "instance",
           "current": {
-            "text": "",
-            "value": ""
+            "text": "All",
+            "value": "$__all"
           },
           "label": "Instance",
           "hide": "dontHide",
