@@ -7,6 +7,7 @@
 - [State Transition Metrics](#state-transition-metrics)
 - [Validator Metrics](#validator-metrics)
 - [Network Metrics](#network-metrics)
+- [Gossip Arrival Metrics](#gossip-arrival-metrics)
 
 ## Node Info Metrics
 
@@ -100,3 +101,14 @@
 | `lean_gossip_block_size_bytes` | Histogram | Bytes size of a gossip block message | On gossip block received | | 10000, 50000, 100000, 250000, 500000, 1000000, 2000000, 5000000 | □ | □ | □ | □ | □ | □ | □ | □ | □ |
 | `lean_gossip_attestation_size_bytes` | Histogram | Bytes size of a gossip attestation message | On gossip attestation received | | 512, 1024, 2048, 4096, 8192, 16384 | □ | □ | □ | □ | □ | □ | □ | □ | □ |
 | `lean_gossip_aggregation_size_bytes` | Histogram | Bytes size of a gossip aggregated attestation message | On gossip aggregate_and_proof received | | 1024, 4096, 16384, 65536, 131072, 262144, 524288, 1048576 | □ | □ | □ | □ | □ | □ | □ | □ | □ |
+
+## Gossip Arrival Metrics
+
+| Name   | Type  | Usage | Sample collection event | Labels | Buckets | EthLambda | Grandine | Lantern  | Lighthouse | Nlean | Peam | Qlean    | Ream     | Zeam     |
+|--------|-------|-------|-------------------------|--------|---------|-----------|----------|----------|------------|-------|------|----------|----------|----------|
+| `lean_gossip_block_arrival_delay_seconds` | Histogram | Absolute delay between a gossip block's arrival and the start of the interval it was due in | On gossip block receipt, before import | | 0.05, 0.1, 0.2, 0.4, 0.8, 1.2, 1.6, 2.4, 4, 8, 16 | ✅ | □ | □ | □ | □ | □ | □ | □ | □ |
+| `lean_gossip_attestation_arrival_delay_seconds` | Histogram | Absolute delay between a gossip attestation's arrival and the start of the interval it was due in | On gossip attestation receipt | | 0.05, 0.1, 0.2, 0.4, 0.8, 1.2, 1.6, 2.4, 4, 8, 16 | ✅ | □ | □ | □ | □ | □ | □ | □ | □ |
+| `lean_gossip_aggregation_arrival_delay_seconds` | Histogram | Absolute delay between a gossip aggregate's arrival and the most recent aggregation-interval boundary at or before it | On gossip aggregated-attestation receipt | | 0.05, 0.1, 0.2, 0.4, 0.8, 1.2, 1.6, 2.4, 4, 8, 16 | ✅ | □ | □ | □ | □ | □ | □ | □ | □ |
+| `lean_gossip_block_arrival_total` | Counter | Gossip blocks by arrival position relative to the interval they were due in | On gossip block receipt, before import | position=before,inside,after | | ✅ | □ | □ | □ | □ | □ | □ | □ | □ |
+| `lean_gossip_attestation_arrival_total` | Counter | Gossip attestations by arrival position relative to the interval they were due in | On gossip attestation receipt | position=before,inside,after | | ✅ | □ | □ | □ | □ | □ | □ | □ | □ |
+| `lean_gossip_aggregation_arrival_total` | Counter | Gossip aggregates by arrival position relative to the most recent aggregation-interval boundary | On gossip aggregated-attestation receipt | position=inside,after | | ✅ | □ | □ | □ | □ | □ | □ | □ | □ |
